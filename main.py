@@ -4,7 +4,9 @@ import requests
 from PIL import Image
 
 # Setup bot
-API_TOKEN = '7352646507:AAH7iuS1biiE82ZDljbkZvIfAUA7lCX-kik'
+API_TOKEN = os.getenv('API_TOKEN')
+if not API_TOKEN:
+    raise ValueError("No API_TOKEN provided")
 bot = telebot.TeleBot(API_TOKEN)
 
 GRADIO_API_URL = "https://huggingfacem4-screenshot2html.hf.space/api/predict"
