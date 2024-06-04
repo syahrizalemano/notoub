@@ -44,7 +44,7 @@ def call_api_endpoint(image_path):
 
         # Download rendered image
         response = requests.get(rendered_image_url)
-        if response.status_code == 200:
+        if response.status_code == 200):
             rendered_image_path = "rendered_image.png"
             with open(rendered_image_path, 'wb') as img_file:
                 img_file.write(response.content)
